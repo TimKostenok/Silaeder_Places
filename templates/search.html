@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9a26a74e-ef24-4ac7-83db-93d418a567a3&lang=ru_RU"></script>
+    <link rel="shortcut icon" href="https://apexembdesigns.com/sites/default/files/2016-11/tree1.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Куда сходить?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway&display=swap');
+        .card {
+            background-color: #ffebb3;
+            width: 20rem;
+            height: auto;
+            margin: 3rem auto;
+            display: inline-block;
+            margin-top: 1%;
+            margin-left: 2%;
+            border-radius: 1rem;
+            box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 1.3%;
+            font-size: 30px;
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+        }
+
+        .card:hover {
+            background-color: #ffd86b;
+            box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville';
+            font-size: 150%;
+        }
+
+        h3 {
+            font-family: 'Libre Baskerville';
+        }
+
+        span {
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+        }
+
+        .view_map {
+            margin-top: 20%;
+            background-color: #ffebb3;
+            border-radius: 1rem;
+            border-color: #fc8d5d;
+            border-width: 3px;
+            display: inline-block;
+            font-size: 15px;
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            color: rgb(28, 28, 28);
+        }
+        
+        .map {
+            margin-bottom: 10%;
+            display: inline-block;
+        }
+
+        .yandex_map {
+            margin-top: 5%;
+            margin-bottom: 10%;
+            display: inline-block;
+            width: 15rem;
+            height: 15rem;
+        }
+
+        .link-ease-in-out a {
+            display: inline-block;
+            font-size: 30px;
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            color: rgb(28, 28, 28);
+            font-style: bold;
+            line-height: 1;
+            text-decoration: none; 
+            font-style: italic;
+            cursor: pointer;
+        }
+        .link-ease-in-out a:after {
+            background-color: rgb(255, 0, 0);
+            display: block;
+            content: "";
+            height: 2px; /* Высота линии */
+            width: 0%;
+            -webkit-transition: width .3s ease-in-out;
+            -moz--transition: width .3s ease-in-out;
+            transition: width .3s ease-in-out;
+        }
+        .link-ease-in-out a:hover:after {
+            width: 100%;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Dosis:wght@400;500;800&family=Rubik+Bubbles&display=swap');
+        body {
+            text-align: center;
+            background-color: rgb(240, 214, 181);
+        }
+        title {
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+        }
+
+        h1::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+
+        a::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+
+        input::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        p::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        span::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        h2::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        h3::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        h1 {
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            font-size: 44px;
+            color: black;
+            float: center;
+        }
+
+        input[type=text] {
+            width: 300px;
+            box-sizing: border-box;
+            border: 2px solid rgb(184, 184, 184);
+            border-radius: 22px;
+            font-size: 16px;
+            background-color: rgb(210, 205, 205);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/151/151773.png');
+            background-size: 23px;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+        }
+
+        input:focus {
+            color: #212529;
+            background-color: rgb(210, 205, 205);
+            border: solid 5px;
+            border-color: #cdb78fcb;
+            outline: 0;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/151/151773.png');
+            box-shadow: 0 0 0 0.3rem rgba(163, 148, 148, 0.25);
+        }
+
+        input::placeholder {
+            margin-left: 0.016%;
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            font-size: 16px auto;
+        }
+    </style>
+    <script>
+        function createMap(id, coord) {
+            let el = document.getElementById(id);
+            el.innerHTML = '';
+            let map = ymaps.Map(id, {
+                center: coord,
+                zoom: 16
+            });
+        }
+    </script>
+</head>
+
+<body tabindex id="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Dosis:wght@400;500;800&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <h1 tabindex>Куда сходить?</h1>
+    <div class="link-ease-in-out">
+        <a href="/" title="Поиск...">Поиск...</a>
+    </div>
+    {% if results == [] %}
+        <p>По вашему запросу ничего не найдено. Попробуйте ещё раз</p>
+    {% else %}
+        <p>Результаты:</p>
+        {% for result in results %}
+            {% set cnt = loop.index0 %}
+            <div class="card" id="{{ cnt }}">
+                <div class="content">
+                    <h2>{{ result['name'] }}</h2>
+                    {% if result['site'] != 'Не найден' %}
+                        <a href="{{ result['site'] }}"><h3>Сайт</h3></a>
+                    {% else %}
+                        <h3>Сайт не найден.</h3>
+                    {% endif %}
+                    {% if result['site'] != 'Не найден' %}
+                        <h3>Адрес:</h3><span>{{ result['address'] }}</span>
+                    {% else %}
+                        <h3>Адрес не найден.</h3>
+                    {% endif %}
+                    {% if result['id'] != 'Не найден' %}
+                        <h3>Id компании:</h3><span>{{ result['id'] }}</span>
+                    {% else %}
+                        <h3>Id компании не найден.</h3>
+                    {% endif %}
+                    {% set coord = result['coordinates'] %}
+                    {% if coord != 'Не найдены' %}
+                        <div class="map">
+                            <button class="view_map" value="Посмотреть на карте" onclick="createMap('ymap_' + '{{ cnt }}', '{{ coord }}')">Посмотреть на карте</button>
+                            <div class="yandex_map" id="ymap_{{ cnt }}">
+                            </div>
+                        </div>
+                    {% else %}
+                        <h3>Местоположение не найдено.</h3>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+</body>
+
+</html>

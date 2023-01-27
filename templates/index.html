@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://apexembdesigns.com/sites/default/files/2016-11/tree1.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Куда сходить?</title>
+    <script>
+        function pressed(e) {
+            if ((window.event ? event.keyCode : e.which) == 13) {
+                document.forms[0].submit(input.content);   
+            }
+        }
+    </script>
+</head>
+
+<body tabindex id="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Dosis:wght@400;500;800&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Dosis:wght@400;500;800&family=Rubik+Bubbles&display=swap');
+        body {
+            text-align: center;
+            background-color: rgb(253, 227, 192);
+        }
+        title {
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+        }
+
+        h1::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+
+        a::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+
+        input::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        p::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        span::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        h2::selection {
+            background-color: rgb(249, 190, 87);
+            color: rgb(28, 28, 28);
+        }
+        h1 {
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            font-size: 44px;
+            color: black;
+            float: center;
+        }
+
+        input[type=text] {
+            width: 300px;
+            box-sizing: border-box;
+            border: 2px solid rgb(184, 184, 184);
+            border-radius: 22px;
+            font-size: 16px;
+            background-color: rgb(210, 205, 205);
+            background-image: url('https://cdn-icons-png.flaticon.com/512/151/151773.png');
+            background-size: 23px;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+        }
+
+        input:focus {
+            color: #212529;
+            background-color: rgb(210, 205, 205);
+            border: solid 5px;
+            border-color: #b8a480cb;
+            outline: 0;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/151/151773.png');
+            box-shadow: 0 0 0 0.3rem rgba(203, 182, 182, 0.25);
+        }
+
+        input::placeholder {
+            margin-left: 0.016%;
+            font-family: 'Comfortaa', cursive, 'Rubik Bubbles', 'Dosis', sans-serif;
+            font-size: 16px auto;
+        }
+    </style>
+    <h1 tabindex>Куда сходить?</h1>
+    <form tabindex method="POST">
+        <input tabindex type="text" name="search" placeholder="Поиск..." onkeydown="pressed(event)">
+    </form>
+</body>
+
+</html>
